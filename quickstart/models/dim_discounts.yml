@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_discounts
+    description: Discounts Dimension. One row per discount
+    columns:
+      - name: discountkey
+        description: The surrogate key of the discount
+        tests:
+          - not_null
+          - unique
+      - name: discountamount
+        description: The discount amount
+        tests:
+          - not_null
