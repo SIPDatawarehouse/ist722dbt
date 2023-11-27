@@ -4,11 +4,6 @@ models:
   - name: fact_stores
     description: Order level fact table. Transaction one row per order 
     columns:
-      - name: stor_id
-        description: Degenerate dimension for the order.
-        tests:
-          - unique
-          - not_null
       - name: title_id
         description: Dimension key for dim_titles
       - name: stor_id  # Assuming this is the correct column name based on your SQL query
