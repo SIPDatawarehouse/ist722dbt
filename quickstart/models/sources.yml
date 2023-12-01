@@ -11,11 +11,11 @@ sources:
           - name: DateKey
             tests:
               - unique
-      - name: pubs
-        database: RAW
-        schema: pubs
-        
-        tables:
+  - name: pubs
+    database: RAW
+    schema: pubs
+  
+    tables:
       - name: Authors
         columns:
           - name: au_id
