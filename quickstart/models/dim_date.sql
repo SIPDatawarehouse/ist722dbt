@@ -1,10 +1,10 @@
-select     
+select
     datekey::int as datekey,
     date,
     year,
     month,
     quarter,
-    day, 
+    day,
     dayofweek,
     weekofyear,
     dayofyear,
@@ -12,4 +12,4 @@ select
     monthname,
     dayname,
     weekday
-    from {{ source('conformed','DateDimension')}}
+from {{ source("conformed", "DateDimension") }}
