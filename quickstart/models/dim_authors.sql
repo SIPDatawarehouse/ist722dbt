@@ -1,7 +1,6 @@
-with stg_authors as (
-    select * from {{ source('pubs','Authors')}}
-)
-select  {{ dbt_utils.generate_surrogate_key(['stg_authors.au_id']) }} as authorkey, 
+with stg_authors as (select * from {{ source("pubs", "AUTHORS") }})
+select
+    {{ dbt_utils.generate_surrogate_key(["stg_authors.au_id"]) }} as authorkey,
     stg_authors.au_id as authorid,
     stg_authors.au_lname as authorlastname,
     stg_authors.au_fname as authorfirstname,
