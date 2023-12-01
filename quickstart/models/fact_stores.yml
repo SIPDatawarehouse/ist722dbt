@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fact_stores
+    description: Order level fact table. Transaction one row per order 
+    columns:
+      - name: title_id
+        description: Dimension key for dim_titles
+      - name: stor_id  # Assuming this is the correct column name based on your SQL query
+        description: Dimension key for dim_stores
+      - name: discount_id  # Assuming this is the correct column name based on your SQL query
+        description: Dimension key for dim_discounts
+      - name: qty
+        description: Additive fact for the total quantity of titles sold on the order
+      - name: discount
+        description: Amount of discount
+      - name: income
+        description: qty * unit price
+      - name: discountedincome
+        description: qty * (unit price * (1 - discount rate))
