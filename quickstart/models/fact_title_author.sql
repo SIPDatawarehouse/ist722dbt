@@ -29,7 +29,8 @@ with
             (
                 (a.royaltyper / 100) * t.price * t.ytd_sales
             ) as effectiveroyaltyearned_row,
-            ((t.royalty * t.ytd_sales / 100) - t.advance) as netearnings_row
+            ((t.royalty * t.ytd_sales / 100) - t.advance) as netearnings_row,
+            t.pubdate
         from stg_title_author a
         join stg_title t on a.title_id = t.title_id
     )
