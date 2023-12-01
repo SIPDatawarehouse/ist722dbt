@@ -42,6 +42,7 @@ select
     au_ord,
     sum(totalsalesrevenue_row) as totalsalesrevenue,  -- Total Sales Revenue per Title
     sum(effectiveroyaltyearned_row) as effectiveroyaltyearned,  -- Effective Royalty Earned per Title
-    sum(netearnings_row) as netearnings  -- Net Earnings per Author 
+    sum(netearnings_row) as netearnings,  -- Net Earnings per Author 
+    pubdate
 from title_author
-group by authorkey, titlekey, publisherskey, title_id, au_ord
+group by authorkey, titlekey, publisherskey, title_id, au_ord, pubdate
