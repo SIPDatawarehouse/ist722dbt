@@ -9,3 +9,4 @@ select
     stg_titles.pubdate as titlepubdate,
     stg_titles.pub_id as pub_id
 from stg_titles
+

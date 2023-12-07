@@ -10,6 +10,7 @@ with
         select
             {{ dbt_utils.generate_surrogate_key(["title_id"]) }} as titlekey,
             {{ dbt_utils.generate_surrogate_key(["pub_id"]) }} as publisherskey,
+            replace(to_date(pubdate)::varchar, '-', '')::int as pubdatekey,
             *
         from {{ source("pubs", "Titles") }}
     )
