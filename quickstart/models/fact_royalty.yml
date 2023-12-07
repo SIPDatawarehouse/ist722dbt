@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fact_royalty
+    description: Author level fact table. Periodic snapshot per year
+    columns:
+      - name: authorkey
+        description: Dimension key for dim_authors
+        tests:
+            - unique
+            - not_null
+      - name: num_titles
+        description: number of titles by that author
+      - name: yearly_qty
+        description: yearly quantity sold for all titles / sum(pubs.titles.ytd_sales) /
+      - name: yearly_sales
+        description: yearly sales for all titles / sum(pubs.titles.ytd_sales*pubs.titles.price) /
+      - name: yearly_royalty
+        description: yearly royalty / sum(pubs.titles.ytd_sales*pubs.titles.price*((pubs.titles.royalty*pubs.titleauthor.royaltyper)/100)/100) /
+
