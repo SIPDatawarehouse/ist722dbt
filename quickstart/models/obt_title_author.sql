@@ -4,7 +4,6 @@ with
     d_authors as (select * from {{ ref("dim_authors") }}),
     d_date as (select * from {{ ref("dim_date") }}),
     d_publishers as (select * from {{ ref("dim_publishers") }})
-
 select
     d_titles.*,
     d_authors.*,
