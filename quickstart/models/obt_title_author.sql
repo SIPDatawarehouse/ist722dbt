@@ -5,7 +5,14 @@ with
     d_date as (select * from {{ ref("dim_date") }}),
     d_publishers as (select * from {{ ref("dim_publishers") }})
 
-select *
+select
+    d_titles.*,
+    d_authors.*,
+    d_date.*,
+    d_publishers.*,
+    f.totalsalesrevenue_row,
+    f.effectiveroyaltyearned_row,
+    f.netearnings_row
 from fact_title_author f
 left join d_titles t on f.titlekey = t.titlekey
 left join d_authors a on f.authorkey = a.authorkey
