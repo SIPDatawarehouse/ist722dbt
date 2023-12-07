@@ -4,8 +4,5 @@ select
     stg_titles.title_id as titleid,
     stg_titles.title as titlename,
     stg_titles.type as titletype,
-    stg_titles.price as titleprice,
-    stg_titles.notes as titlenotes,
-    stg_titles.pubdate as titlepubdate,
-    stg_titles.pub_id as pub_id
+    stg_titles.notes as titlenotes
 from stg_titles
