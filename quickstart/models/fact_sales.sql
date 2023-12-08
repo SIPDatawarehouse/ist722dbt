@@ -23,10 +23,12 @@ select
     s.orderid,
     s.titlekey,
     s.storekey,
+    s.ord_date,
+    s.payterms,
     s.quantity,
     case when d.discount is not null then d.discount else 0 end as discount,
     s.quantity*t.price as income,
-    s.quantity*(t.price*(1-(d.discount/100))) as discountedincome
+    case when d.discount is not null then s.quantity*(t.price*(1-(d.discount/100))) else s.quantity*t.price end as discountedincome
 from stg_sales s
-    join stg_titles_more t on s.title_id = t.title_id
-    join stg_discounts d on s.stor_id = d.stor_id
+    left join stg_titles_more t on s.title_id = t.title_id
+    left join stg_discounts d on s.stor_id = d.stor_id
