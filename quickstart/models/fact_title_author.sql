@@ -20,6 +20,8 @@ select
     a.titlekey,
     t.publisherskey,
     a.au_ord,
+    t.title as titlename,
+    t.type as titletype,
     t.price,
     t.advance,
     t.royalty,
