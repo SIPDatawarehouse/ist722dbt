@@ -21,8 +21,6 @@ select
     t.publisherskey,
     a.au_ord,
     t.title_id,
-    t.title as titlename,
-    t.type as titletype,
     t.price,
     t.ytd_sales,
     (t.price * t.ytd_sales) as totalsalesrevenue,
