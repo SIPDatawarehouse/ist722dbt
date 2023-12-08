@@ -23,6 +23,7 @@ select
     t.title_id,
     t.price,
     t.ytd_sales,
+    t.pubdatekey,
     (t.price * t.ytd_sales) as totalsalesrevenue,
     ((a.royaltyper / 100) * t.price * t.ytd_sales) as effectiveroyaltyearned,
     ((t.royalty * t.ytd_sales / 100) - t.advance) as netearnings

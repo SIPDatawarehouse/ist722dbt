@@ -6,7 +6,6 @@ with
     d_title as (select * from {{ ref("dim_titles") }})
 
 select
-    f_title.*,
     d_authors.*,
     d_date.*,
     d_publishers.*,
