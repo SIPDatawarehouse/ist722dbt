@@ -1,6 +1,6 @@
 with
     f_title_author as (select * from {{ ref("fact_title_author") }}),
-    d_authors as (select * from {{ ref("dim_authors") }}),
+    d_authors as (select * from {{ ref("DIM_AUTHORS") }}),
     d_date as (select * from {{ ref("dim_date") }}),
     d_publishers as (select * from {{ ref("dim_publishers") }}),
     d_title as (select * from {{ ref("DIM_TITLES") }})
