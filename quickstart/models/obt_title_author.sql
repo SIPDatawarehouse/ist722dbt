@@ -6,15 +6,15 @@ with
     d_titles as (select * from {{ ref("DIM_TITLES") }})
 
 select
-    d.*,
-    a.*,
+    d_titles.*,
+    d_authors.*,
     d_date.*,
-    p.*,
+    d_publishers.*,
     f.totalsalesrevenue_row,
     f.effectiveroyaltyearned_row,
     f.netearnings_row
-from f_title_author f
-left join d_titles d on f.titlekey = d.titlekey
-left join d_authors a on f.authorkey = a.authorkey
-left join d_publishers p on f.publisherskey = p.publisherskey
+from f_title_author as f
+left join d_titles on f.titlekey = d_titles.titlekey
+left join d_authors on f.authorkey = d_authors.authorkey
+left join d_publishers on f.publisherskey = d_publishers.publisherskey
 left join d_date on f.pubdatekey = d_date.datekey
