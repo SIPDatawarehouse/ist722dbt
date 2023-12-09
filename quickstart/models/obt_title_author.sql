@@ -12,7 +12,7 @@ select
     f.totalsalesrevenue,
     f.effectiveroyaltyearned,
     f.netearnings
-from f_title f
+from f_title_author f
 left join d_title d on d.titlekey = f.titlekey
 left join d_authors a on f.authorkey = a.authorkey
 left join d_publishers p on f.publisherskey = p.publisherskey
