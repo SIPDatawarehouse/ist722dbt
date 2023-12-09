@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_title
+  - name: dim_titles
     description: Titles Dimension. One row per title
     columns:
       - name: titlekey
