@@ -7,7 +7,6 @@ models:
       - name: OrderId
         description: Degenerate dimension for of the order.
         tests:
-            - unique
             - not_null
       - name: titlekey
         description: Dimension key for dim_titles

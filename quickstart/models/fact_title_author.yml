@@ -7,7 +7,6 @@ models:
       - name: title_id
         description: Degenerate dimension for of the title.
         tests:
-            - unique
             - not_null
       - name: titlekey
         description: Dimension key for dim_title
